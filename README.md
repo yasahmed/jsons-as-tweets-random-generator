@@ -1,5 +1,5 @@
 # jsons-as-tweets-random-generator
-
+```yaml
 GET :  http://localhost:8089/tweets
 Response : 
 
