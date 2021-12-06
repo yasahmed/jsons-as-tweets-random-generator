@@ -9,15 +9,13 @@ const generateTeweets = (count) => {
   return tweets;
 };
 
-const generateTeweet = () => {
-  return {
-    id: faker.datatype.uuid(),
-    name: faker.name.findName(),
-    creation_date: faker.date.soon(),
-    email: faker.internet.email(),
-    card: faker.helpers.createCard().posts[0],
-  };
-};
+const generateTeweet = () => ({
+  id: faker.datatype.uuid(),
+  name: faker.name.findName(),
+  creation_date: faker.date.soon(),
+  email: faker.internet.email(),
+  card: faker.helpers.createCard().posts[0],
+});
 
 app.get("/tweets", (req, res) => {
   res.send(generateTeweets(10));
