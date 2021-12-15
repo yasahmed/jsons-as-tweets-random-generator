@@ -3,6 +3,9 @@ const express = require("express");
 
 const app = express();
 
+// Constants
+const PORT = 8089;
+
 const generateTeweets = (count) => {
   let tweets = [];
   for (let i = 0; i < count; i++) tweets.push(generateTeweet());
@@ -18,9 +21,9 @@ const generateTeweet = () => ({
 });
 
 app.get("/tweets", (req, res) => {
-  res.send(generateTeweets(10));
+  res.send(generateTeweets(1));
 });
 
-app.listen(8089, () => {
+app.listen(PORT, () => {
   console.log("Serveur à l'écoute");
 });
